@@ -1,0 +1,13 @@
+[Unit]
+Description=Startup for the target tracking
+After=syslog.target
+
+[Service]
+WorkingDirectory=/opt/starlink_drone/
+ExecStart=/opt/starlink_drone/start_java.sh
+ExecStop=/opt/starlink_drone/stop_java.sh
+Restart=always
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
